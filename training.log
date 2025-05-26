@@ -1,0 +1,351 @@
+2025-05-25 20:39:33,568 - INFO - Script execution started
+2025-05-25 20:39:33,568 - INFO - Starting model training
+2025-05-25 20:39:33,568 - INFO - Attempting to load cleaned_dataset.parquet
+2025-05-25 20:39:33,612 - INFO - Successfully loaded dataset with 5990 rows and 20 columns
+2025-05-25 20:39:33,612 - INFO - Columns: ['Year', 'Month', 'Site', 'Surface Temperature', 'Middle Temperature', 'pH', 'Ammonia', 'Nitrate', 'Phosphate', 'Dissolved Oxygen', 'Weather Condition', 'Wind Direction', 'Air Temperature', 'Date', 'Seismicity', 'Acidity', 'Temperature (in Celsius)', 'SO2', 'Plume (in meters)', 'Ground Deformation']
+2025-05-25 20:39:33,614 - INFO - Found 12 numeric parameters: ['Acidity', 'Air Temperature', 'Ammonia', 'Dissolved Oxygen', 'Middle Temperature', 'Nitrate', 'Phosphate', 'SO2', 'Seismicity', 'Surface Temperature', 'Temperature (in Celsius)', 'pH']
+2025-05-25 20:39:33,637 - INFO - Created models and training_results directories
+2025-05-25 20:39:33,637 - INFO - Training models for Acidity
+2025-05-25 20:39:33,637 - INFO - Preparing univariate data for Acidity
+2025-05-25 20:39:33,637 - INFO - Parameter Acidity has 5990 non-null values
+2025-05-25 20:39:33,644 - INFO - Created 5983 samples for Acidity
+2025-05-25 20:39:33,644 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:39:33,645 - INFO - Training CNN for Acidity
+2025-05-25 20:39:33,645 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:39:33,711 - INFO - CNN model built successfully
+2025-05-25 20:39:52,107 - INFO - Saved cnn_Acidity.keras
+2025-05-25 20:39:52,294 - INFO - Attempting to save training results to training_results/cnn_Acidity_training_results.json
+2025-05-25 20:39:52,299 - INFO - Successfully saved training_results/cnn_Acidity_training_results.json
+2025-05-25 20:39:52,299 - INFO - Training LSTM for Acidity
+2025-05-25 20:39:52,299 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 20:39:52,346 - INFO - LSTM model built successfully
+2025-05-25 20:40:33,632 - INFO - Saved lstm_Acidity.keras
+2025-05-25 20:40:34,092 - INFO - Attempting to save training results to training_results/lstm_Acidity_training_results.json
+2025-05-25 20:40:34,097 - INFO - Successfully saved training_results/lstm_Acidity_training_results.json
+2025-05-25 20:40:34,097 - INFO - Training Hybrid for Acidity
+2025-05-25 20:40:34,097 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 20:40:34,129 - INFO - Hybrid model built successfully
+2025-05-25 20:40:57,732 - INFO - Saved hybrid_Acidity.keras
+2025-05-25 20:40:58,031 - INFO - Attempting to save training results to training_results/hybrid_Acidity_training_results.json
+2025-05-25 20:40:58,035 - INFO - Successfully saved training_results/hybrid_Acidity_training_results.json
+2025-05-25 20:40:58,036 - INFO - Training models for Air Temperature
+2025-05-25 20:40:58,036 - INFO - Preparing univariate data for Air Temperature
+2025-05-25 20:40:58,036 - INFO - Parameter Air Temperature has 5990 non-null values
+2025-05-25 20:40:58,042 - INFO - Created 5983 samples for Air Temperature
+2025-05-25 20:40:58,042 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:40:58,042 - INFO - Training CNN for Air Temperature
+2025-05-25 20:40:58,042 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:40:58,063 - INFO - CNN model built successfully
+2025-05-25 20:41:15,881 - INFO - Saved cnn_Air Temperature.keras
+2025-05-25 20:41:16,052 - INFO - Attempting to save training results to training_results/cnn_Air Temperature_training_results.json
+2025-05-25 20:41:16,056 - INFO - Successfully saved training_results/cnn_Air Temperature_training_results.json
+2025-05-25 20:41:16,057 - INFO - Training LSTM for Air Temperature
+2025-05-25 20:41:16,057 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 20:41:16,094 - INFO - LSTM model built successfully
+2025-05-25 20:47:51,523 - INFO - Script execution started
+2025-05-25 20:47:51,524 - INFO - Starting model training
+2025-05-25 20:47:51,524 - INFO - Attempting to load cleaned_dataset.parquet
+2025-05-25 20:47:51,570 - INFO - Successfully loaded dataset with 5990 rows and 20 columns
+2025-05-25 20:47:51,571 - INFO - Columns: ['Year', 'Month', 'Site', 'Surface Temperature', 'Middle Temperature', 'pH', 'Ammonia', 'Nitrate', 'Phosphate', 'Dissolved Oxygen', 'Weather Condition', 'Wind Direction', 'Air Temperature', 'Date', 'Seismicity', 'Acidity', 'Temperature (in Celsius)', 'SO2', 'Plume (in meters)', 'Ground Deformation']
+2025-05-25 20:47:51,572 - INFO - Found 12 numeric parameters: ['Acidity', 'Air Temperature', 'Ammonia', 'Dissolved Oxygen', 'Middle Temperature', 'Nitrate', 'Phosphate', 'SO2', 'Seismicity', 'Surface Temperature', 'Temperature (in Celsius)', 'pH']
+2025-05-25 20:47:51,572 - INFO - Created models and training_results directories
+2025-05-25 20:47:51,573 - INFO - Training models for Acidity
+2025-05-25 20:47:51,573 - INFO - Preparing univariate data for Acidity
+2025-05-25 20:47:51,573 - INFO - Parameter Acidity has 5990 non-null values
+2025-05-25 20:47:51,578 - INFO - Created 5983 samples for Acidity
+2025-05-25 20:47:51,579 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:47:51,579 - INFO - Training CNN for Acidity
+2025-05-25 20:47:51,579 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:47:51,662 - INFO - CNN model built successfully
+2025-05-25 20:48:18,845 - INFO - Saved cnn_Acidity.keras
+2025-05-25 20:48:18,995 - INFO - Attempting to save training results to training_results/cnn_Acidity_training_results.json
+2025-05-25 20:48:19,005 - INFO - Successfully saved training_results/cnn_Acidity_training_results.json
+2025-05-25 20:48:19,005 - INFO - Training LSTM for Acidity
+2025-05-25 20:48:19,005 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 20:48:19,047 - INFO - LSTM model built successfully
+2025-05-25 20:48:58,343 - INFO - Saved lstm_Acidity.keras
+2025-05-25 20:48:58,771 - INFO - Attempting to save training results to training_results/lstm_Acidity_training_results.json
+2025-05-25 20:48:58,775 - INFO - Successfully saved training_results/lstm_Acidity_training_results.json
+2025-05-25 20:48:58,775 - INFO - Training Hybrid for Acidity
+2025-05-25 20:48:58,775 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 20:48:58,799 - INFO - Hybrid model built successfully
+2025-05-25 20:49:23,613 - INFO - Saved hybrid_Acidity.keras
+2025-05-25 20:49:23,933 - INFO - Attempting to save training results to training_results/hybrid_Acidity_training_results.json
+2025-05-25 20:49:23,937 - INFO - Successfully saved training_results/hybrid_Acidity_training_results.json
+2025-05-25 20:49:23,937 - INFO - Training models for Air Temperature
+2025-05-25 20:49:23,937 - INFO - Preparing univariate data for Air Temperature
+2025-05-25 20:49:23,938 - INFO - Parameter Air Temperature has 5990 non-null values
+2025-05-25 20:49:23,946 - INFO - Created 5983 samples for Air Temperature
+2025-05-25 20:49:23,946 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:49:23,946 - INFO - Training CNN for Air Temperature
+2025-05-25 20:49:23,946 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:49:23,969 - INFO - CNN model built successfully
+2025-05-25 20:49:44,229 - INFO - Saved cnn_Air Temperature.keras
+2025-05-25 20:49:44,400 - INFO - Attempting to save training results to training_results/cnn_Air Temperature_training_results.json
+2025-05-25 20:49:44,405 - INFO - Successfully saved training_results/cnn_Air Temperature_training_results.json
+2025-05-25 20:49:44,405 - INFO - Training LSTM for Air Temperature
+2025-05-25 20:49:44,405 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 20:49:44,445 - INFO - LSTM model built successfully
+2025-05-25 20:50:38,354 - INFO - Saved lstm_Air Temperature.keras
+2025-05-25 20:50:39,028 - INFO - Attempting to save training results to training_results/lstm_Air Temperature_training_results.json
+2025-05-25 20:50:39,056 - INFO - Successfully saved training_results/lstm_Air Temperature_training_results.json
+2025-05-25 20:50:39,056 - INFO - Training Hybrid for Air Temperature
+2025-05-25 20:50:39,056 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 20:50:39,091 - INFO - Hybrid model built successfully
+2025-05-25 20:51:08,039 - INFO - Saved hybrid_Air Temperature.keras
+2025-05-25 20:51:08,375 - INFO - Attempting to save training results to training_results/hybrid_Air Temperature_training_results.json
+2025-05-25 20:51:08,380 - INFO - Successfully saved training_results/hybrid_Air Temperature_training_results.json
+2025-05-25 20:51:08,380 - INFO - Training models for Ammonia
+2025-05-25 20:51:08,380 - INFO - Preparing univariate data for Ammonia
+2025-05-25 20:51:08,381 - INFO - Parameter Ammonia has 5990 non-null values
+2025-05-25 20:51:08,386 - INFO - Created 5983 samples for Ammonia
+2025-05-25 20:51:08,386 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:51:08,386 - INFO - Training CNN for Ammonia
+2025-05-25 20:51:08,386 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:51:08,407 - INFO - CNN model built successfully
+2025-05-25 20:51:31,171 - INFO - Saved cnn_Ammonia.keras
+2025-05-25 20:51:31,316 - INFO - Attempting to save training results to training_results/cnn_Ammonia_training_results.json
+2025-05-25 20:51:31,321 - INFO - Successfully saved training_results/cnn_Ammonia_training_results.json
+2025-05-25 20:51:31,322 - INFO - Training LSTM for Ammonia
+2025-05-25 20:51:31,322 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 20:51:31,352 - INFO - LSTM model built successfully
+2025-05-25 20:52:16,214 - INFO - Saved lstm_Ammonia.keras
+2025-05-25 20:52:16,656 - INFO - Attempting to save training results to training_results/lstm_Ammonia_training_results.json
+2025-05-25 20:52:16,661 - INFO - Successfully saved training_results/lstm_Ammonia_training_results.json
+2025-05-25 20:52:16,661 - INFO - Training Hybrid for Ammonia
+2025-05-25 20:52:16,661 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 20:52:16,684 - INFO - Hybrid model built successfully
+2025-05-25 20:52:42,163 - INFO - Saved hybrid_Ammonia.keras
+2025-05-25 20:52:42,465 - INFO - Attempting to save training results to training_results/hybrid_Ammonia_training_results.json
+2025-05-25 20:52:42,470 - INFO - Successfully saved training_results/hybrid_Ammonia_training_results.json
+2025-05-25 20:52:42,470 - INFO - Training models for Dissolved Oxygen
+2025-05-25 20:52:42,470 - INFO - Preparing univariate data for Dissolved Oxygen
+2025-05-25 20:52:42,470 - INFO - Parameter Dissolved Oxygen has 5990 non-null values
+2025-05-25 20:52:42,476 - INFO - Created 5983 samples for Dissolved Oxygen
+2025-05-25 20:52:42,476 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:52:42,476 - INFO - Training CNN for Dissolved Oxygen
+2025-05-25 20:52:42,476 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:52:42,495 - INFO - CNN model built successfully
+2025-05-25 20:53:06,049 - INFO - Saved cnn_Dissolved Oxygen.keras
+2025-05-25 20:53:06,962 - INFO - Attempting to save training results to training_results/cnn_Dissolved Oxygen_training_results.json
+2025-05-25 20:53:06,970 - INFO - Successfully saved training_results/cnn_Dissolved Oxygen_training_results.json
+2025-05-25 20:53:06,970 - INFO - Training LSTM for Dissolved Oxygen
+2025-05-25 20:53:06,970 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 20:53:07,042 - INFO - LSTM model built successfully
+2025-05-25 20:54:21,395 - INFO - Saved lstm_Dissolved Oxygen.keras
+2025-05-25 20:54:22,045 - INFO - Attempting to save training results to training_results/lstm_Dissolved Oxygen_training_results.json
+2025-05-25 20:54:22,054 - INFO - Successfully saved training_results/lstm_Dissolved Oxygen_training_results.json
+2025-05-25 20:54:22,054 - INFO - Training Hybrid for Dissolved Oxygen
+2025-05-25 20:54:22,054 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 20:54:22,084 - INFO - Hybrid model built successfully
+2025-05-25 20:54:59,544 - INFO - Saved hybrid_Dissolved Oxygen.keras
+2025-05-25 20:54:59,962 - INFO - Attempting to save training results to training_results/hybrid_Dissolved Oxygen_training_results.json
+2025-05-25 20:54:59,967 - INFO - Successfully saved training_results/hybrid_Dissolved Oxygen_training_results.json
+2025-05-25 20:54:59,967 - INFO - Training models for Middle Temperature
+2025-05-25 20:54:59,967 - INFO - Preparing univariate data for Middle Temperature
+2025-05-25 20:54:59,967 - INFO - Parameter Middle Temperature has 5990 non-null values
+2025-05-25 20:54:59,974 - INFO - Created 5983 samples for Middle Temperature
+2025-05-25 20:54:59,974 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:54:59,974 - INFO - Training CNN for Middle Temperature
+2025-05-25 20:54:59,974 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:54:59,999 - INFO - CNN model built successfully
+2025-05-25 20:55:26,336 - INFO - Saved cnn_Middle Temperature.keras
+2025-05-25 20:55:26,529 - INFO - Attempting to save training results to training_results/cnn_Middle Temperature_training_results.json
+2025-05-25 20:55:26,534 - INFO - Successfully saved training_results/cnn_Middle Temperature_training_results.json
+2025-05-25 20:55:26,534 - INFO - Training LSTM for Middle Temperature
+2025-05-25 20:55:26,534 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 20:55:26,580 - INFO - LSTM model built successfully
+2025-05-25 20:56:31,534 - INFO - Saved lstm_Middle Temperature.keras
+2025-05-25 20:56:32,152 - INFO - Attempting to save training results to training_results/lstm_Middle Temperature_training_results.json
+2025-05-25 20:56:32,156 - INFO - Successfully saved training_results/lstm_Middle Temperature_training_results.json
+2025-05-25 20:56:32,156 - INFO - Training Hybrid for Middle Temperature
+2025-05-25 20:56:32,156 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 20:56:32,193 - INFO - Hybrid model built successfully
+2025-05-25 20:57:07,612 - INFO - Saved hybrid_Middle Temperature.keras
+2025-05-25 20:57:08,041 - INFO - Attempting to save training results to training_results/hybrid_Middle Temperature_training_results.json
+2025-05-25 20:57:08,046 - INFO - Successfully saved training_results/hybrid_Middle Temperature_training_results.json
+2025-05-25 20:57:08,046 - INFO - Training models for Nitrate
+2025-05-25 20:57:08,046 - INFO - Preparing univariate data for Nitrate
+2025-05-25 20:57:08,046 - INFO - Parameter Nitrate has 5990 non-null values
+2025-05-25 20:57:08,054 - INFO - Created 5983 samples for Nitrate
+2025-05-25 20:57:08,054 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:57:08,055 - INFO - Training CNN for Nitrate
+2025-05-25 20:57:08,055 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:57:08,088 - INFO - CNN model built successfully
+2025-05-25 20:57:36,156 - INFO - Saved cnn_Nitrate.keras
+2025-05-25 20:57:36,338 - INFO - Attempting to save training results to training_results/cnn_Nitrate_training_results.json
+2025-05-25 20:57:36,342 - INFO - Successfully saved training_results/cnn_Nitrate_training_results.json
+2025-05-25 20:57:36,342 - INFO - Training LSTM for Nitrate
+2025-05-25 20:57:36,342 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 20:57:36,395 - INFO - LSTM model built successfully
+2025-05-25 20:58:50,389 - INFO - Saved lstm_Nitrate.keras
+2025-05-25 20:58:51,066 - INFO - Attempting to save training results to training_results/lstm_Nitrate_training_results.json
+2025-05-25 20:58:51,072 - INFO - Successfully saved training_results/lstm_Nitrate_training_results.json
+2025-05-25 20:58:51,072 - INFO - Training Hybrid for Nitrate
+2025-05-25 20:58:51,072 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 20:58:51,107 - INFO - Hybrid model built successfully
+2025-05-25 20:59:47,652 - INFO - Saved hybrid_Nitrate.keras
+2025-05-25 20:59:48,421 - INFO - Attempting to save training results to training_results/hybrid_Nitrate_training_results.json
+2025-05-25 20:59:48,426 - INFO - Successfully saved training_results/hybrid_Nitrate_training_results.json
+2025-05-25 20:59:48,427 - INFO - Training models for Phosphate
+2025-05-25 20:59:48,429 - INFO - Preparing univariate data for Phosphate
+2025-05-25 20:59:48,429 - INFO - Parameter Phosphate has 5990 non-null values
+2025-05-25 20:59:48,439 - INFO - Created 5983 samples for Phosphate
+2025-05-25 20:59:48,439 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 20:59:48,439 - INFO - Training CNN for Phosphate
+2025-05-25 20:59:48,440 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 20:59:48,470 - INFO - CNN model built successfully
+2025-05-25 21:00:18,753 - INFO - Saved cnn_Phosphate.keras
+2025-05-25 21:00:18,969 - INFO - Attempting to save training results to training_results/cnn_Phosphate_training_results.json
+2025-05-25 21:00:18,974 - INFO - Successfully saved training_results/cnn_Phosphate_training_results.json
+2025-05-25 21:00:18,974 - INFO - Training LSTM for Phosphate
+2025-05-25 21:00:18,974 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 21:00:19,025 - INFO - LSTM model built successfully
+2025-05-25 21:01:39,507 - INFO - Saved lstm_Phosphate.keras
+2025-05-25 21:01:40,231 - INFO - Attempting to save training results to training_results/lstm_Phosphate_training_results.json
+2025-05-25 21:01:40,237 - INFO - Successfully saved training_results/lstm_Phosphate_training_results.json
+2025-05-25 21:01:40,239 - INFO - Training Hybrid for Phosphate
+2025-05-25 21:01:40,239 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 21:01:40,272 - INFO - Hybrid model built successfully
+2025-05-25 21:02:20,103 - INFO - Saved hybrid_Phosphate.keras
+2025-05-25 21:02:20,619 - INFO - Attempting to save training results to training_results/hybrid_Phosphate_training_results.json
+2025-05-25 21:02:20,626 - INFO - Successfully saved training_results/hybrid_Phosphate_training_results.json
+2025-05-25 21:02:20,627 - INFO - Training models for SO2
+2025-05-25 21:02:20,627 - INFO - Preparing univariate data for SO2
+2025-05-25 21:02:20,627 - INFO - Parameter SO2 has 5990 non-null values
+2025-05-25 21:02:20,644 - INFO - Created 5983 samples for SO2
+2025-05-25 21:02:20,646 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 21:02:20,646 - INFO - Training CNN for SO2
+2025-05-25 21:02:20,646 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 21:02:20,696 - INFO - CNN model built successfully
+2025-05-25 21:02:53,854 - INFO - Saved cnn_SO2.keras
+2025-05-25 21:02:54,058 - INFO - Attempting to save training results to training_results/cnn_SO2_training_results.json
+2025-05-25 21:02:54,062 - INFO - Successfully saved training_results/cnn_SO2_training_results.json
+2025-05-25 21:02:54,062 - INFO - Training LSTM for SO2
+2025-05-25 21:02:54,062 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 21:02:54,107 - INFO - LSTM model built successfully
+2025-05-25 21:04:24,659 - INFO - Saved lstm_SO2.keras
+2025-05-25 21:04:25,424 - INFO - Attempting to save training results to training_results/lstm_SO2_training_results.json
+2025-05-25 21:04:25,433 - INFO - Successfully saved training_results/lstm_SO2_training_results.json
+2025-05-25 21:04:25,434 - INFO - Training Hybrid for SO2
+2025-05-25 21:04:25,434 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 21:04:25,477 - INFO - Hybrid model built successfully
+2025-05-25 21:05:09,672 - INFO - Saved hybrid_SO2.keras
+2025-05-25 21:05:10,110 - INFO - Attempting to save training results to training_results/hybrid_SO2_training_results.json
+2025-05-25 21:05:10,117 - INFO - Successfully saved training_results/hybrid_SO2_training_results.json
+2025-05-25 21:05:10,117 - INFO - Training models for Seismicity
+2025-05-25 21:05:10,117 - INFO - Preparing univariate data for Seismicity
+2025-05-25 21:05:10,117 - INFO - Parameter Seismicity has 5990 non-null values
+2025-05-25 21:05:10,125 - INFO - Created 5983 samples for Seismicity
+2025-05-25 21:05:10,125 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 21:05:10,125 - INFO - Training CNN for Seismicity
+2025-05-25 21:05:10,125 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 21:05:10,153 - INFO - CNN model built successfully
+2025-05-25 21:05:38,952 - INFO - Saved cnn_Seismicity.keras
+2025-05-25 21:05:39,165 - INFO - Attempting to save training results to training_results/cnn_Seismicity_training_results.json
+2025-05-25 21:05:39,171 - INFO - Successfully saved training_results/cnn_Seismicity_training_results.json
+2025-05-25 21:05:39,172 - INFO - Training LSTM for Seismicity
+2025-05-25 21:05:39,172 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 21:05:39,212 - INFO - LSTM model built successfully
+2025-05-25 21:07:01,431 - INFO - Saved lstm_Seismicity.keras
+2025-05-25 21:07:02,187 - INFO - Attempting to save training results to training_results/lstm_Seismicity_training_results.json
+2025-05-25 21:07:02,212 - INFO - Successfully saved training_results/lstm_Seismicity_training_results.json
+2025-05-25 21:07:02,212 - INFO - Training Hybrid for Seismicity
+2025-05-25 21:07:02,212 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 21:07:02,244 - INFO - Hybrid model built successfully
+2025-05-25 21:07:49,221 - INFO - Saved hybrid_Seismicity.keras
+2025-05-25 21:07:49,931 - INFO - Attempting to save training results to training_results/hybrid_Seismicity_training_results.json
+2025-05-25 21:07:49,939 - INFO - Successfully saved training_results/hybrid_Seismicity_training_results.json
+2025-05-25 21:07:49,939 - INFO - Training models for Surface Temperature
+2025-05-25 21:07:49,939 - INFO - Preparing univariate data for Surface Temperature
+2025-05-25 21:07:49,940 - INFO - Parameter Surface Temperature has 5990 non-null values
+2025-05-25 21:07:49,956 - INFO - Created 5983 samples for Surface Temperature
+2025-05-25 21:07:49,956 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 21:07:49,956 - INFO - Training CNN for Surface Temperature
+2025-05-25 21:07:49,956 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 21:07:50,001 - INFO - CNN model built successfully
+2025-05-25 21:08:27,687 - INFO - Saved cnn_Surface Temperature.keras
+2025-05-25 21:08:28,084 - INFO - Attempting to save training results to training_results/cnn_Surface Temperature_training_results.json
+2025-05-25 21:08:28,088 - INFO - Successfully saved training_results/cnn_Surface Temperature_training_results.json
+2025-05-25 21:08:28,088 - INFO - Training LSTM for Surface Temperature
+2025-05-25 21:08:28,089 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 21:08:28,129 - INFO - LSTM model built successfully
+2025-05-25 21:10:07,028 - INFO - Saved lstm_Surface Temperature.keras
+2025-05-25 21:10:08,542 - INFO - Attempting to save training results to training_results/lstm_Surface Temperature_training_results.json
+2025-05-25 21:10:08,550 - INFO - Successfully saved training_results/lstm_Surface Temperature_training_results.json
+2025-05-25 21:10:08,550 - INFO - Training Hybrid for Surface Temperature
+2025-05-25 21:10:08,551 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 21:10:08,602 - INFO - Hybrid model built successfully
+2025-05-25 21:11:03,326 - INFO - Saved hybrid_Surface Temperature.keras
+2025-05-25 21:11:04,046 - INFO - Attempting to save training results to training_results/hybrid_Surface Temperature_training_results.json
+2025-05-25 21:11:04,051 - INFO - Successfully saved training_results/hybrid_Surface Temperature_training_results.json
+2025-05-25 21:11:04,051 - INFO - Training models for Temperature (in Celsius)
+2025-05-25 21:11:04,051 - INFO - Preparing univariate data for Temperature (in Celsius)
+2025-05-25 21:11:04,051 - INFO - Parameter Temperature (in Celsius) has 5990 non-null values
+2025-05-25 21:11:04,059 - INFO - Created 5983 samples for Temperature (in Celsius)
+2025-05-25 21:11:04,060 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 21:11:04,060 - INFO - Training CNN for Temperature (in Celsius)
+2025-05-25 21:11:04,060 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 21:11:04,085 - INFO - CNN model built successfully
+2025-05-25 21:11:35,594 - INFO - Saved cnn_Temperature (in Celsius).keras
+2025-05-25 21:11:35,881 - INFO - Attempting to save training results to training_results/cnn_Temperature (in Celsius)_training_results.json
+2025-05-25 21:11:35,886 - INFO - Successfully saved training_results/cnn_Temperature (in Celsius)_training_results.json
+2025-05-25 21:11:35,886 - INFO - Training LSTM for Temperature (in Celsius)
+2025-05-25 21:11:35,886 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 21:11:35,981 - INFO - LSTM model built successfully
+2025-05-25 21:13:19,290 - INFO - Saved lstm_Temperature (in Celsius).keras
+2025-05-25 21:13:20,054 - INFO - Attempting to save training results to training_results/lstm_Temperature (in Celsius)_training_results.json
+2025-05-25 21:13:20,063 - INFO - Successfully saved training_results/lstm_Temperature (in Celsius)_training_results.json
+2025-05-25 21:13:20,063 - INFO - Training Hybrid for Temperature (in Celsius)
+2025-05-25 21:13:20,063 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 21:13:20,095 - INFO - Hybrid model built successfully
+2025-05-25 21:14:05,340 - INFO - Saved hybrid_Temperature (in Celsius).keras
+2025-05-25 21:14:06,054 - INFO - Attempting to save training results to training_results/hybrid_Temperature (in Celsius)_training_results.json
+2025-05-25 21:14:06,059 - INFO - Successfully saved training_results/hybrid_Temperature (in Celsius)_training_results.json
+2025-05-25 21:14:06,059 - INFO - Training models for pH
+2025-05-25 21:14:06,059 - INFO - Preparing univariate data for pH
+2025-05-25 21:14:06,059 - INFO - Parameter pH has 5990 non-null values
+2025-05-25 21:14:06,065 - INFO - Created 5983 samples for pH
+2025-05-25 21:14:06,065 - INFO - Train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 21:14:06,065 - INFO - Training CNN for pH
+2025-05-25 21:14:06,065 - INFO - Building CNN model with input shape (7, 1)
+2025-05-25 21:14:06,092 - INFO - CNN model built successfully
+2025-05-25 21:14:30,963 - INFO - Saved cnn_pH.keras
+2025-05-25 21:14:31,157 - INFO - Attempting to save training results to training_results/cnn_pH_training_results.json
+2025-05-25 21:14:31,162 - INFO - Successfully saved training_results/cnn_pH_training_results.json
+2025-05-25 21:14:31,162 - INFO - Training LSTM for pH
+2025-05-25 21:14:31,162 - INFO - Building LSTM model with input shape (7, 1)
+2025-05-25 21:14:31,207 - INFO - LSTM model built successfully
+2025-05-25 21:15:34,621 - INFO - Saved lstm_pH.keras
+2025-05-25 21:15:35,256 - INFO - Attempting to save training results to training_results/lstm_pH_training_results.json
+2025-05-25 21:15:35,263 - INFO - Successfully saved training_results/lstm_pH_training_results.json
+2025-05-25 21:15:35,264 - INFO - Training Hybrid for pH
+2025-05-25 21:15:35,264 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 1)
+2025-05-25 21:15:35,307 - INFO - Hybrid model built successfully
+2025-05-25 21:16:18,256 - INFO - Saved hybrid_pH.keras
+2025-05-25 21:16:18,702 - INFO - Attempting to save training results to training_results/hybrid_pH_training_results.json
+2025-05-25 21:16:18,706 - INFO - Successfully saved training_results/hybrid_pH_training_results.json
+2025-05-25 21:16:18,707 - INFO - Training multivariate models
+2025-05-25 21:16:18,707 - INFO - Preparing multivariate data for 12 parameters
+2025-05-25 21:16:18,708 - INFO - Multivariate data has 5990 complete rows
+2025-05-25 21:16:18,717 - INFO - Created 5983 multivariate samples
+2025-05-25 21:16:18,717 - INFO - Multivariate train split: 4786 samples, Validation split: 1197 samples
+2025-05-25 21:16:18,717 - INFO - Training multivariate CNN
+2025-05-25 21:16:18,717 - INFO - Building CNN model with input shape (7, 12)
+2025-05-25 21:16:18,797 - INFO - CNN model built successfully
+2025-05-25 21:16:57,187 - INFO - Saved cnn_multivariate.keras
+2025-05-25 21:16:57,470 - INFO - Attempting to save training results to training_results/cnn_multivariate_training_results.json
+2025-05-25 21:16:57,519 - INFO - Successfully saved training_results/cnn_multivariate_training_results.json
+2025-05-25 21:16:57,519 - INFO - Training multivariate LSTM
+2025-05-25 21:16:57,519 - INFO - Building LSTM model with input shape (7, 12)
+2025-05-25 21:16:57,561 - INFO - LSTM model built successfully
+2025-05-25 21:18:07,767 - INFO - Saved lstm_multivariate.keras
+2025-05-25 21:18:08,476 - INFO - Attempting to save training results to training_results/lstm_multivariate_training_results.json
+2025-05-25 21:18:08,553 - INFO - Successfully saved training_results/lstm_multivariate_training_results.json
+2025-05-25 21:18:08,554 - INFO - Training multivariate Hybrid
+2025-05-25 21:18:08,554 - INFO - Building Hybrid CNN-LSTM model with input shape (7, 12)
+2025-05-25 21:18:08,594 - INFO - Hybrid model built successfully
+2025-05-25 21:18:56,015 - INFO - Saved hybrid_multivariate.keras
+2025-05-25 21:18:56,489 - INFO - Attempting to save training results to training_results/hybrid_multivariate_training_results.json
+2025-05-25 21:18:56,542 - INFO - Successfully saved training_results/hybrid_multivariate_training_results.json
+2025-05-25 21:18:56,543 - INFO - Script execution completed
