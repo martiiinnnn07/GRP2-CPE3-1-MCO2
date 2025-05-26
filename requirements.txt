@@ -3,6 +3,6 @@ pandas
 numpy
 plotly
 pyarrow
-tensorflow
+tensorflow = ">=1.15.4,<2.0"
 scikit-learn
 scipy
