@@ -3,7 +3,11 @@ pandas==2.2.2
 numpy==1.26.4
 plotly==5.22.0
 pyarrow==17.0.0
+tensorboard==2.19.0
+tensorboard-data-server==0.7.2
 tensorflow==2.19.0
+tensorflow-io-gcs-filesystem==0.31.0
+termcolor==3.1.0
 scikit-learn==1.5.1
 scipy==1.14.1
 keras==3.9.2
