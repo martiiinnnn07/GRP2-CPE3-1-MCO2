@@ -1943,110 +1943,212 @@ with tab4:
                 )
                 st.plotly_chart(fig_loss, use_container_width=True)
 
+
+            # ==== Comparison Section (Modified) ====
+
             elif st.session_state.view == "Comparison":
+
                 st.markdown(
+
                     "<div class='custom-text-primary' style='margin-top: 3px; margin-bottom: 5px; font-size: 20px;'>Model Comparison</div>",
+
                     unsafe_allow_html=True)
+
                 if not st.session_state.prediction_params:
                     st.error("Please run a prediction first to compare models.")
+
                     st.stop()
 
                 if st.button("Run Model Comparison", key="run_comparison", type="primary"):
+
                     with st.spinner("Running model comparison, this may take a while, please wait..."):
+
                         comparison_results = []
+
                         model_builders = {'cnn': build_cnn, 'lstm': build_lstm, 'hybrid': build_hybrid}
+
                         filtered_df = bfar_df.copy()
+
                         if st.session_state.prediction_params["site"] != 'All Sites':
                             filtered_df = filtered_df[filtered_df['Site'] == st.session_state.prediction_params["site"]]
+
                         filtered_df = filtered_df.sort_values('Date')
+
                         horizon_days = {"1 Week": 7, "2 Weeks": 14, "1 Month": 30, "3 Months": 90,
+
                                         "6 Months": 180, "9 Months": 270, "1 Year": 364}[
+
                             st.session_state.prediction_params["horizon"]]
 
                         if st.session_state.prediction_params["mode"] == "Individual Parameter":
+
                             selected_param = st.session_state.prediction_params["parameter"]
+
                             X_train, y_train, X_val, y_val = prepare_univariate_data(filtered_df, selected_param)
+
                             if X_train is None:
                                 st.error(f"Insufficient data for {selected_param}.")
+
                                 st.stop()
 
                             for model_name, builder in model_builders.items():
+
                                 model = builder((X_train.shape[1], 1))
+
                                 if model is None:
                                     logger.error(f"Failed to build {model_name}.")
+
                                     continue
+
                                 callbacks = [
+
                                     LossHistory(),
+
                                     EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True),
+
                                     ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=5)
+
                                 ]
+
                                 model.fit(X_train, y_train, epochs=50, batch_size=16, validation_data=(X_val, y_val),
+
                                           callbacks=callbacks, verbose=0)
+
                                 y_pred = model.predict(X_val, verbose=0).flatten()
+
                                 y_actual = y_val.flatten()
+
                                 rmse, mae, r2 = compute_metrics(y_actual, y_pred)
+
                                 comparison_results.append({
+
                                     "Model": model_name.upper(),
+
                                     "RMSE": rmse,
+
                                     "MAE": mae,
-                                    "R²": r2
+
+                                    "R²": r2 if 0 <= r2 <= 1 else None  # Hide R² if negative
+
                                 })
+
                         else:
+
                             X_train, y_train, X_val, y_val = prepare_multivariate_data(filtered_df, available_params)
+
                             if X_train is None:
                                 st.error(f"Insufficient multivariate data.")
+
                                 st.stop()
 
                             for model_name, builder in model_builders.items():
+
                                 model = builder((X_train.shape[1], X_train.shape[2]))
+
                                 if model is None:
                                     logger.error(f"Failed to build {model_name}.")
+
                                     continue
+
                                 callbacks = [
+
                                     LossHistory(),
+
                                     EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True),
+
                                     ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=5)
+
                                 ]
+
                                 model.fit(X_train, y_train, epochs=50, batch_size=16, validation_data=(X_val, y_val),
+
                                           callbacks=callbacks, verbose=0)
+
                                 y_pred = model.predict(X_val, verbose=0)
+
                                 metrics = {}
+
                                 for i, param in enumerate(available_params):
                                     rmse, mae, r2 = compute_metrics(y_val[:, i], y_pred[:, i])
+
                                     metrics[param] = {"rmse": rmse, "mae": mae, "r2": r2}
+
                                 avg_rmse = np.mean([m["rmse"] for m in metrics.values()])
+
                                 avg_mae = np.mean([m["mae"] for m in metrics.values()])
+
                                 avg_r2 = np.mean([m["r2"] for m in metrics.values()])
+
                                 comparison_results.append({
+
                                     "Model": model_name.upper(),
+
                                     "RMSE": avg_rmse,
+
                                     "MAE": avg_mae,
-                                    "R²": avg_r2
+
+                                    "R²": avg_r2 if 0 <= avg_r2 <= 1 else None  # Hide R² if negative
+
                                 })
 
                         st.session_state.comparison_results = comparison_results
 
                 if st.session_state.comparison_results:
+
                     comp_df = pd.DataFrame(st.session_state.comparison_results)
-                    st.dataframe(comp_df, use_container_width=True)
-                    melted_comp = comp_df.melt(id_vars="Model", value_vars=["RMSE", "MAE", "R²"],
+
+                    # Identify models with hidden R²
+
+                    hidden_r2_models = comp_df[comp_df['R²'].isna()]['Model'].tolist()
+
+                    # Remove R² column if all values are None
+
+                    display_df = comp_df.drop(columns=['R²']) if comp_df['R²'].isna().all() else comp_df
+
+                    st.dataframe(display_df, use_container_width=True)
+
+                    value_vars = ["RMSE", "MAE"] + (["R²"] if not comp_df['R²'].isna().all() else [])
+
+                    melted_comp = comp_df.melt(id_vars="Model", value_vars=value_vars,
+
                                                var_name="Metric", value_name="Value")
+
                     fig_comp = px.bar(melted_comp, x="Metric", y="Value", color="Model",
+
                                       title="Model Comparison",
+
                                       barmode="group")
+
                     fig_comp.update_layout(
+
                         showlegend=True,
+
                         plot_bgcolor='white',
+
                         paper_bgcolor='white',
+
                         height=400,
+
                         title_font=dict(size=18, family='Montserrat' if font_base64 else 'sans-serif'),
+
                         title_x=0.03,
+
                         xaxis_title="Metric",
+
                         yaxis_title="Value",
+
                         font=dict(family='Montserrat' if font_base64 else 'sans-serif')
+
                     )
+
                     st.plotly_chart(fig_comp, use_container_width=True)
+
+                    if hidden_r2_models:
+                        st.info(
+                            f"R² for {', '.join(hidden_r2_models)} cannot be displayed due to insufficient data")
+
                 else:
+
                     st.info("Click 'Run Model Comparison' to compare models.")
 
 
